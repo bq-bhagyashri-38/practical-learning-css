@@ -1,0 +1,15 @@
+
+:root {
+  --pink: #ff69b4; /* Example pink color */
+  --orange: #ffa500; /* Example orange color */
+}
+
+.container {
+  display: flex;
+
+  min-height: 15rem;
+  max-width: 40rem;
+  gap: 1rem;
+  background-color: var(--pink); /* Corrected this line */
+  border: 1px solid var(--orange); /* Corrected this line */
+}

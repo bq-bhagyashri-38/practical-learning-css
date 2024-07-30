@@ -1,0 +1,118 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    margin: 8px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: white;
+  
+   
+  
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+  }
+  
+  .square:is(:hover, :focus) {
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+  }
+  
+  /* Decorative styles */
+  body {
+    display: grid;
+    place-items: center;
+  }
+  
+
+
+  .emoji {
+    font-size: 8em;
+    filter: grayscale(100%);
+    transition: filter 450ms ease;
+  }
+  
+  .emoji:is(:hover, :focus) {
+    filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Decorative styles */
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  
+  .bubble {
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    border-radius: 100%;
+    text-align: center;
+    padding: 16px;
+    font-size: 2em;
+    margin: 2px;
+  
+    /* When not hovering, this transition is active */
+    transition: all 5s ease-in 200ms;
+  }
+  
+  .bubble:is(:hover, :focus) {
+    background-color: paleturquoise;
+    transform: scale(1.6);
+    opacity: 0.6;
+  
+    /* This transition is active on hover */
+    transition: transform 150ms cubic-bezier(0.5, 1.75, 0.75, 1.25);
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+    padding: 0;
+  }
+  
+  /* Decorative styles */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out; /* Easing applied here */
+    margin: 50px;
+}
+
+.box:hover {
+    transform: translateY(50px); /* Moves down on hover */
+}
+.container {
+    width: 200px; /* Set a fixed width */
+    overflow: hidden; /* Hide overflowed content */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Use ellipsis for overflow text */
+    border: 1px solid #ccc; /* Just to visualize the container */
+    padding: 10px; /* Some padding for aesthetics */
+}

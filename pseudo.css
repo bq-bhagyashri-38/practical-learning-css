@@ -1,0 +1,351 @@
+/* .test p::first-letter {
+    color: blue;
+    float: left;
+    font-size: 2.6em;
+    font-weight: bold;
+    line-height: 1;
+    margin-inline-end: 0.2rem;
+  } */
+
+  a {
+    color: #0000ff;
+    text-decoration: none;
+  }
+  
+  /* a::before {
+   
+    content: '🔗';
+  } */
+  a::after {
+    margin: 30px;
+    content: '🔗';
+  }
+  
+  video {
+    width: 600px; /* Set the width of the video */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #333; /* Optional: add a border around the video */
+}
+
+video::backdrop {
+    background-color: rgb(32, 218, 203); /* Color of the backdrop when the video is paused */
+}
+
+
+details {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+/* Style for details when they are open */
+details[open] {
+  background-color: #dadbc6; /* Light blue background when open */
+}
+
+/* Style for the summary element */
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Optional: Style for the summary when open */
+details[open] summary {
+  color: #a058d3; /* Change text color when open */
+}
+
+ Default selection style
+ ::selection {
+  background: green; /* Background color for selection */
+  color: white; /* Text color for selection */
+}
+
+/* Selection style for the second paragraph */
+p:nth-of-type(2) ::selection {
+  background: darkblue; /* Background color for selection in the second paragraph */
+  color: yellow; /* Text color for selection in the second paragraph */
+}
+
+/* Margin between paragraphs */
+p + p {
+  margin-top: 2em;
+}
+/* Styles for the video container */
+video {
+  max-width: 600px;
+  width: 100%;
+  border: 2px solid #333;
+  display: block;
+  margin: auto;
+}
+
+/* Style for cue text */
+::cue {
+  color: white; /* Text color for captions */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 2px; /* Padding around the text */
+  font-size: 16px; /* Font size of the captions */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Optional: Style for specific cues */
+::cue(.highlight) {
+  color: yellow; /* Change color for highlighted cues */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:active {
+  background-color: darkblue; /* Change when pressed */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: blue; /* Change when focused */
+  outline: none; /* Remove default focus outline */
+}
+
+input:in-range {
+  background: green;
+  color: white;
+}
+
+input {
+  min-width: 320px;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  font: inherit;
+  border: 1px solid var(--color-mid);
+  border-radius: 0.25rem;
+}
+
+.info {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-block-start: 0.5em;
+  max-width: 30ch;
+}
+.tst :empty{
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+
+
+
+.demo > * {
+  width: 250px;
+  height: 200px;
+  padding: 1em;
+  background-color: bisque;
+}
+
+
+ 
+.demo > * + * {
+  margin-top: -150px;
+  opacity: 0.75;
+  box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+}
+
+.demo > :first-child {
+  background: aliceblue;
+  border: 2px solid lightblue;
+  z-index: 3;
+}
+
+.demo > :nth-child(2) {
+  background: pink;
+  border: 2px solid hotpink;
+  z-index: 1;
+  margin-left: 1rem;
+}
+
+
+.demo > :last-child {
+  background: wheat;
+  border: 2px solid gold;
+  z-index: 2;
+}
+
+
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  transition: transform 0.5s;
+}
+
+.box:hover {
+  transform: rotate(360deg) scale(1.2); /* Rotate and scale on hover */
+}
+
+
+.responsive-text {
+  font-size: clamp(1rem, 2vw + 1rem, 3rem); /* Responsive font size */
+  margin: 20px;
+  background-color: lightblue;
+  padding: 10px;
+  text-align: center;
+}
+
+
+.clip-path-example {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    clip-path: circle(60%); /* Circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.circle {
+  margin-top: 100px;
+  clip-path: circle(50%);
+}
+
+.polygon {
+  margin-top: 100px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+.demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 500px;
+}
+
+.offset-path-example {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  position: relative;
+  animation: move 3s infinite;
+  offset-path: circle(10px at 50% 50%); /* Move in a circular path */
+}
+
+@keyframes move {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+
+.shape-outside-example {
+  width: 300px;
+}
+
+.float-shape {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: lightgreen;
+  shape-outside: circle(50%); /* Text will wrap around this circle */
+  clip-path: circle(50%); /* Clipping the shape */
+}
+
+.ellipse-example {
+  width: 200px;
+  height: 100px;
+  background-color: orange;
+  clip-path: ellipse(50% 25% at 50% 50%); /* Ellipse shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.inset-example {
+  width: 200px;
+  height: 200px;
+  background-color: teal;
+  clip-path: inset(20px round 15px); /* Inset shape with rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.circle-example {
+  width: 200px;
+  height: 200px;
+  background-color: purple;
+  clip-path: circle(50%); /* Circle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.polygon-example {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  perspective: 800px; /* Adding perspective for 3D effect */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  transform-style: preserve-3d; /* Enables 3D transformations on children */
+  transition: transform 1s; /* Smooth transition for the rotation */
+}
+
+.box:hover {
+  transform: rotate3d(5, 1, 10, 45deg); /* Rotate 45 degrees around the x and y axes */
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-property: background-color, transform; /* Specify properties to animate */
+  transition-duration: 0.3s; /* Duration of the transition */
+}
+
+.button:hover {
+  background-color: darkblue; /* Change background color on hover */
+  transform: scale(1.1); /* Scale up on hover */
+}
